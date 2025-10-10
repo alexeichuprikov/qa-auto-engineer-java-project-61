@@ -1,17 +1,16 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 import java.util.Scanner;
 
 public class Even {
-    public static void evenGame() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+    public static void play() {
+        String userName = Engine.description();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= Engine.rounds; i++) {
             int random = (int) (Math.random() * 1000) + 1; //границы случайных чисел не были обозначены сделал от 1 до 1000. требуется уточнение у аналитика :)
             System.out.println("Question: " + random);
             System.out.print("Your answer: ");
