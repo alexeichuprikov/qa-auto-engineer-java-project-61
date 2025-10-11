@@ -1,8 +1,12 @@
-### Demo(Even)
+### Demo 2 (Even)
 https://asciinema.org/a/FPppNZRyj39zZUm0gBFfnXw3G
 
-### Demo(Calculator)
+### Demo 3 (Calculator)
 https://asciinema.org/a/5NUp6quilr3DtKLHDEYSfAcZ2
+
+### Demo 4 (GCD)
+https://asciinema.org/a/5TK9BqwuQriLXfKwwefoqJjLP
+
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions)
