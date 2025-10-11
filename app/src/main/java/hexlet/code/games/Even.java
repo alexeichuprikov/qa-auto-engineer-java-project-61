@@ -23,7 +23,8 @@ public class Even {
             if (answer.equals(rightAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'.\nLet's try again, " + userName);
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
