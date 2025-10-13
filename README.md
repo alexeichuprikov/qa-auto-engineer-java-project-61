@@ -7,6 +7,9 @@ https://asciinema.org/a/5NUp6quilr3DtKLHDEYSfAcZ2
 ### Demo 4 (GCD)
 https://asciinema.org/a/5TK9BqwuQriLXfKwwefoqJjLP
 
+### Demo 5 (Progression)
+https://asciinema.org/a/lB79E4WkEmp1207S7mYMDvjjQ
+
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions)
