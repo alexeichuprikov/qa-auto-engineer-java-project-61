@@ -1,12 +1,13 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Scanner;
 
 public class Gcd {
     public static void play() {
-        String userName = Engine.description();
+        String userName = Cli.greet();
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);
 
@@ -24,18 +25,18 @@ public class Gcd {
                 tempFirstValue = rightAnswer;
             }
 
-            System.out.println("Question: " + firstValue + " " + secondValue);
-            System.out.print("Your answer: ");
+            System.out.println(Engine.answerText + firstValue + " " + secondValue);
+            System.out.print(Engine.answerText);
             int answer = scanner.nextInt();
 
             if (answer == rightAnswer) {
-                System.out.println("Correct!");
+                System.out.println(Engine.correctAnswer);
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
-                System.out.println("Let's try again, " + userName + "!");
+                System.out.printf(Engine.wrongAnswer, answer, rightAnswer);
+                System.out.printf(Engine.retry, userName);
                 return;
             }
         }
-        System.out.println("Congratulations, " + userName + "!");
+        System.out.printf(Engine.congratulations, userName);
     }
 }

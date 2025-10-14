@@ -1,12 +1,13 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Scanner;
 
 public class Prime {
     public static void play() {
-        String userName = Engine.description();
+        String userName = Cli.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 
@@ -14,19 +15,19 @@ public class Prime {
             int num = (int) (Math.random() * 100) + 1;
             String rightAnswer = Prime(num);
 
-            System.out.println("Question: " + num);
-            System.out.print("Your answer: ");
+            System.out.println(Engine.answerText + num);
+            System.out.print(Engine.answerText);
             String answer = scanner.next();
 
             if (answer.equals(rightAnswer)) {
-                System.out.println("Correct!");
+                System.out.println(Engine.correctAnswer);
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+                System.out.printf(Engine.wrongAnswer, answer, rightAnswer);
+                System.out.printf(Engine.retry, userName);
                 return;
             }
         }
-        System.out.println("Congratulations, " + userName + "!");
+        System.out.printf(Engine.congratulations, userName);
     }
 
 
