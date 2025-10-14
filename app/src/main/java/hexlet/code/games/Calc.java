@@ -28,6 +28,9 @@ public class Calc {
                 case '*':
                     rightAnswer = firstValue * secondValue;
                     break;
+                default:
+                    System.out.println("Неизвестный оператор: " + randomSign);
+                    break;
             }
 
             System.out.println(Engine.questionText + firstValue + " " + randomSign + " " + secondValue);
