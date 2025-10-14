@@ -37,6 +37,11 @@ public class App {
             case "6":
                 Prime.play();
                 break;
+            case "0":
+                System.out.println("Выход");
+                break;
+            default:
+                System.out.println("Вы ввели неверное значение");
         }
         scanner.close();
     }
