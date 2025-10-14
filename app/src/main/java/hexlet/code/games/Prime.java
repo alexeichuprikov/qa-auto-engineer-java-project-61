@@ -13,7 +13,7 @@ public class Prime {
 
         for (int i = 1; i <= Engine.rounds; i++) {
             int num = (int) (Math.random() * 100) + 1;
-            String rightAnswer = Prime(num);
+            String rightAnswer = logicPrime(num);
 
             System.out.println(Engine.answerText + num);
             System.out.print(Engine.answerText);
@@ -31,7 +31,7 @@ public class Prime {
     }
 
 
-    public static String Prime(int num) {
+    public static String logicPrime(int num) {
         if (num < 2) {
             return "no";
         }
