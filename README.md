@@ -32,13 +32,9 @@
 ***
 
 ##### Запуск игры:
-1. Клонируйте репозиторий
-   git clone https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61
-   cd qa-auto-engineer-java-project-61
-1. Соберите проект
-   ./gradlew installDist
-1. Запустите игру
-   ./build/install/app/bin/app  
+1. Клонируйте репозиторий<br>git clone https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61<br>cd qa-auto-engineer-java-project-61
+1. Соберите проект<br>./gradlew installDist
+1. Запустите игру<br>./build/install/app/bin/app  
 
 *** 
 ##### Требования 
