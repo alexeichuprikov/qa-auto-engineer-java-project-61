@@ -11,23 +11,23 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= Engine.rounds; i++) {
-            int num = (int) (Math.random() * 100) + 1;
+        for (int i = 1; i <= Engine.getRounds(); i++) {
+            int num = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             String rightAnswer = logicPrime(num);
 
-            System.out.println(Engine.answerText + num);
-            System.out.print(Engine.answerText);
+            System.out.println(Engine.getQuestionText() + num);
+            System.out.print(Engine.getAnswerText());
             String answer = scanner.next();
 
             if (answer.equals(rightAnswer)) {
-                System.out.println(Engine.correctAnswer);
+                System.out.println(Engine.getCorrectAnswer());
             } else {
-                System.out.printf(Engine.wrongAnswer, answer, rightAnswer);
-                System.out.printf(Engine.retry, userName);
+                System.out.printf(Engine.getWrongAnswer(), answer, rightAnswer);
+                System.out.printf(Engine.getRetry(), userName);
                 return;
             }
         }
-        System.out.printf(Engine.congratulations, userName);
+        System.out.printf(Engine.getCongratulations(), userName);
     }
 
 

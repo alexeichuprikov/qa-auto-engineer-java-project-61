@@ -11,9 +11,9 @@ public class Gcd {
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= Engine.rounds; i++) {
-            int firstValue = (int) (Math.random() * 100) + 1;
-            int secondValue = (int) (Math.random() * 100) + 1;
+        for (int i = 1; i <= Engine.getRounds(); i++) {
+            int firstValue = (int) (Math.random() * Engine.getMaxNumber()) + 1;
+            int secondValue = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             int rightAnswer = 0;
 
             int tempFirstValue = firstValue;
@@ -25,18 +25,18 @@ public class Gcd {
                 tempFirstValue = rightAnswer;
             }
 
-            System.out.println(Engine.answerText + firstValue + " " + secondValue);
-            System.out.print(Engine.answerText);
+            System.out.println(Engine.getQuestionText() + firstValue + " " + secondValue);
+            System.out.print(Engine.getAnswerText());
             int answer = scanner.nextInt();
 
             if (answer == rightAnswer) {
-                System.out.println(Engine.correctAnswer);
+                System.out.println(Engine.getCorrectAnswer());
             } else {
-                System.out.printf(Engine.wrongAnswer, answer, rightAnswer);
-                System.out.printf(Engine.retry, userName);
+                System.out.printf(Engine.getWrongAnswer(), answer, rightAnswer);
+                System.out.printf(Engine.getRetry(), userName);
                 return;
             }
         }
-        System.out.printf(Engine.congratulations, userName);
+        System.out.printf(Engine.getCongratulations(), userName);
     }
 }

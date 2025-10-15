@@ -11,10 +11,10 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= Engine.rounds; i++) {
-            int random = (int) (Math.random() * 1000) + 1; //границы случайных чисел не были обозначены сделал от 1 до 1000. требуется уточнение у аналитика :)
-            System.out.println(Engine.questionText + random);
-            System.out.print(Engine.answerText);
+        for (int i = 1; i <= Engine.getRounds(); i++) {
+            int random = (int) (Math.random() * Engine.getMaxNumber()) + 1;
+            System.out.println(Engine.getQuestionText() + random);
+            System.out.print(Engine.getAnswerText());
             String answer = scanner.nextLine();
 
             boolean isEven = random % 2 == 0;
@@ -22,14 +22,14 @@ public class Even {
 
 
             if (answer.equals(rightAnswer)) {
-                System.out.println(Engine.correctAnswer);
+                System.out.println(Engine.getCorrectAnswer());
             } else {
-                System.out.printf(Engine.wrongAnswer, answer, rightAnswer);
-                System.out.printf(Engine.retry, userName);
+                System.out.printf(Engine.getWrongAnswer(), answer, rightAnswer);
+                System.out.printf(Engine.getRetry(), userName);
                 return;
             }
         }
-        System.out.printf(Engine.congratulations, userName);
+        System.out.printf(Engine.getCongratulations(), userName);
 
     }
 }
