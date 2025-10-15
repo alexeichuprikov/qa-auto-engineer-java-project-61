@@ -1,29 +1,32 @@
-### Demo 2 (Even)
-https://asciinema.org/a/FPppNZRyj39zZUm0gBFfnXw3G
-
-### Demo 3 (Calculator)
-https://asciinema.org/a/5NUp6quilr3DtKLHDEYSfAcZ2
-
-### Demo 4 (GCD)
-https://asciinema.org/a/5TK9BqwuQriLXfKwwefoqJjLP
-
-### Demo 5 (Progression)
-https://asciinema.org/a/lB79E4WkEmp1207S7mYMDvjjQ
-
-### Demo 6 (Prime)
-https://asciinema.org/a/MarrMPMwxoFQsybLk4IbKAvcA
-
-
-### Hexlet tests and linter status:
 [![Actions Status](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alexeichuprikov/qa-auto-engineer-java-project-61/actions)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=alexeichuprikov_qa-auto-engineer-java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=alexeichuprikov_qa-auto-engineer-java-project-61)
+
+#### Проект 
+# Игры разума
+#### Игры разума - это набор из пяти увлекательных консольных игр. <br>Для победы пользователю требуется решить верно три задачи подряд.
+
+> ## Игры
+> ### 1. Игра: "Проверка на чётность" (Even)
+> ##### Суть игры: определите является ли представленное число четным, для ответа подходят варианты: yes или no.
+>> Ссылка для демонстрации игры https://asciinema.org/a/FPppNZRyj39zZUm0gBFfnXw3G
+> ***
+> ### 2. Игра: "Калькулятор" (Calculator)
+> ##### Суть игры: необходимо ввести результат для математического выражения.
+>> Ссылка для демонстрации игры https://asciinema.org/a/5NUp6quilr3DtKLHDEYSfAcZ2
+> ***
+> ### 3. Игра "Наибольший общий делитель (НОД)" (GCD)
+> ##### Суть игры: необходимо для двух чисел ввести наибольший общий делитель.
+>> Ссылка для демонстрации игры https://asciinema.org/a/5TK9BqwuQriLXfKwwefoqJjLP
+> ***
+> ### 4. Игра "Арифметическая прогрессия" (Progression)
+> ##### Суть игры: определите какое число может скрываться за двумя точками.
+>> Ссылка для демонстрации игры https://asciinema.org/a/lB79E4WkEmp1207S7mYMDvjjQ
+> ***
+> ### 5. Игра "Простое ли число?" (Prime)
+> ##### Суть игры: определите является ли представленное число простым, для ответа подходят варианты: yes или no.
+> ###### p.s. Простое число - это натуральное число, которое больше 1 и не имеют натуральных делителей, кроме 1 и себя.
+>> Ссылка для демонстрации игры https://asciinema.org/a/MarrMPMwxoFQsybLk4IbKAvcA
+
+
+
+
