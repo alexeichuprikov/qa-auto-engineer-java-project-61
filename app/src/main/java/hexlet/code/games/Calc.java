@@ -1,50 +1,39 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-
-import java.util.Scanner;
 
 public class Calc {
     public static void play() {
-        String userName = Cli.greet();
-        System.out.println("What is the result of the expression?");
-        Scanner scanner = new Scanner(System.in);
+        String optionDescription = "What is the result of the expression?";
+        String[][] questionsAndCorrectAnswers = new String[Engine.getRounds()][2];
 
-        for (int i = 1; i <= Engine.getRounds(); i++) {
+        for (int i = 0; i < Engine.getRounds(); i++) {
             int firstValue = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             int secondValue = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             char[] signs = {'+', '-', '*'};
             char randomSign = signs[(int) (Math.random() * signs.length)];
-            int rightAnswer = 0;
+
+            String question = firstValue + " " + randomSign + " " + secondValue;
+            String correctAnswer = "";
 
             switch (randomSign) {
                 case '+':
-                    rightAnswer = firstValue + secondValue;
+                    correctAnswer = String.valueOf(firstValue + secondValue);
                     break;
                 case '-':
-                    rightAnswer = firstValue - secondValue;
+                    correctAnswer = String.valueOf(firstValue - secondValue);
                     break;
                 case '*':
-                    rightAnswer = firstValue * secondValue;
+                    correctAnswer = String.valueOf(firstValue * secondValue);
                     break;
                 default:
-                    System.out.println("Неизвестный оператор: " + randomSign);
-                    break;
+                    correctAnswer = "Неизвестный оператор: " + randomSign;
             }
 
-            System.out.println(Engine.getQuestionText() + firstValue + " " + randomSign + " " + secondValue);
-            System.out.print(Engine.getAnswerText());
-            int answer = scanner.nextInt();
+            questionsAndCorrectAnswers[i][0] = question;
+            questionsAndCorrectAnswers[i][1] = correctAnswer;
 
-            if (answer == rightAnswer) {
-                System.out.println(Engine.getCorrectAnswer());
-            } else {
-                System.out.printf(Engine.getWrongAnswer(), answer, rightAnswer);
-                System.out.printf(Engine.getRetry(), userName);
-                return;
-            }
         }
-        System.out.printf(Engine.getCongratulations(), userName);
+        Engine.startGame(optionDescription, questionsAndCorrectAnswers);
     }
 }

@@ -1,16 +1,12 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
 
     private static final int ROUNDS = 3;
     //границы случайных чисел не были обозначены сделал от 1 до 100. требуется уточнение у аналитика
     private static final int MAX_NUMBER = 100;
-    private static final String QUESTION_TEXT = "Question: ";
-    private static final String ANSWER_TEXT = "Your answer: ";
-    private static final String CORRECT_ANSWER = "Correct!";
-    private static final String WRONG_ANSWER = "'%s' is wrong answer ;(. Correct answer was '%s'.";
-    private static final String RETRY = "Let's try again, %s!";
-    private static final String CONGRATULATIONS = "Congratulations, %s!";
 
     public static int getRounds() {
         return ROUNDS;
@@ -20,27 +16,29 @@ public class Engine {
         return MAX_NUMBER;
     }
 
-    public static String getQuestionText() {
-        return QUESTION_TEXT;
-    }
+    public static void startGame(String optionDescription, String[][] questionsAndCorrectAnswers) {
+        String userName = Cli.greet();
+        System.out.println(optionDescription);
+        Scanner scanner = new Scanner(System.in);
 
-    public static String getAnswerText() {
-        return ANSWER_TEXT;
-    }
+        for (int i = 0; i < ROUNDS; i++) {
+            String question = questionsAndCorrectAnswers[i][0];
+            String correctAnswer = questionsAndCorrectAnswers[i][1];
 
-    public static String getCorrectAnswer() {
-        return CORRECT_ANSWER;
-    }
+            System.out.println("Question: " + question);
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.nextLine();
 
-    public static String getWrongAnswer() {
-        return WRONG_ANSWER;
-    }
-
-    public static String getRetry() {
-        return RETRY;
-    }
-
-    public static String getCongratulations() {
-        return CONGRATULATIONS;
+            if (userAnswer.equals(correctAnswer)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                return;
+            }
+        }
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
+

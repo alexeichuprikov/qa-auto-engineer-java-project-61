@@ -1,35 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-
-import java.util.Scanner;
 
 public class Even {
     public static void play() {
-        String userName = Cli.greet();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Scanner scanner = new Scanner(System.in);
+        String optionDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] questionsAndCorrectAnswers = new String[Engine.getRounds()][2];
 
-        for (int i = 1; i <= Engine.getRounds(); i++) {
+        for (int i = 0; i < Engine.getRounds(); i++) {
             int random = (int) (Math.random() * Engine.getMaxNumber()) + 1;
-            System.out.println(Engine.getQuestionText() + random);
-            System.out.print(Engine.getAnswerText());
-            String answer = scanner.nextLine();
-
+            String question = String.valueOf(random);
             boolean isEven = random % 2 == 0;
-            String rightAnswer = isEven ? "yes" : "no";
+            String correctAnswer = isEven ? "yes" : "no";
 
-
-            if (answer.equals(rightAnswer)) {
-                System.out.println(Engine.getCorrectAnswer());
-            } else {
-                System.out.printf(Engine.getWrongAnswer(), answer, rightAnswer);
-                System.out.printf(Engine.getRetry(), userName);
-                return;
-            }
+            questionsAndCorrectAnswers[i][0] = question;
+            questionsAndCorrectAnswers[i][1] = correctAnswer;
         }
-        System.out.printf(Engine.getCongratulations(), userName);
-
+        Engine.startGame(optionDescription, questionsAndCorrectAnswers);
     }
 }
