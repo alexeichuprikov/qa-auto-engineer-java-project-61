@@ -3,21 +3,24 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+    public static final int MAX_NUMBER = 100;
     private static final int STEP_COUNT = 10;
     private static final int VALUE_COUNT = 10;
 
     public static void play() {
         String optionDescription = "What number is missing in the progression?";
-        String[][] questionsAndCorrectAnswers = new String[Engine.getRounds()][2];
+        String[][] questionsAndCorrectAnswers = new String[Engine.ROUNDS][2];
 
-        for (int i = 0; i < Engine.getRounds(); i++) {
-            int start = (int) (Math.random() * Engine.getMaxNumber()) + 1;
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int start = (int) (Math.random() * MAX_NUMBER) + 1;
             int step = (int) (Math.random() * STEP_COUNT) + 1;
             int hideIndex = (int) (Math.random() * VALUE_COUNT);
-            int[] sequence = addSequence(start, step, VALUE_COUNT);
 
-            String question = createQuestion(sequence, hideIndex);
-            String correctAnswer = String.valueOf(sequence[hideIndex]);
+            String[] sequence = addSequence(start, step, VALUE_COUNT);
+            String correctAnswer = sequence[hideIndex];
+
+            sequence[hideIndex] = "..";
+            String question = String.join(" ", sequence);
 
             questionsAndCorrectAnswers[i][0] = question;
             questionsAndCorrectAnswers[i][1] = correctAnswer;
@@ -25,24 +28,12 @@ public class Progression {
         Engine.startGame(optionDescription, questionsAndCorrectAnswers);
     }
 
-    public static int[] addSequence(int start, int step, int length) {
-        int[] sequence = new int[length];
+    public static String[] addSequence(int start, int step, int length) {
+        String[] sequence = new String[length];
 
         for (int i = 0; i < length; i++) {
-            sequence[i] = start + i * step;
+            sequence[i] = String.valueOf(start + i * step);
         }
         return sequence;
-    }
-
-    public static String createQuestion(int[] sequence, int hideIndex) {
-        String question = "";
-        for (int i = 0; i < VALUE_COUNT; i++) {
-            if (i == hideIndex) {
-                question += ".. ";
-            } else {
-                question += sequence[i] + " ";
-            }
-        }
-        return question;
     }
 }

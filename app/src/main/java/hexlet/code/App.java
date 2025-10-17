@@ -45,7 +45,7 @@ public class App {
                 System.out.println("Выход");
                 break;
             default:
-                System.out.println("Вы ввели неверное значение");
+                System.out.println("Unknown user choice " + option);
         }
         scanner.close();
     }
