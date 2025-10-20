@@ -14,7 +14,7 @@ public class Progression {
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int start = Utils.generateNumber();
             int step = Utils.generateNumber(Utils.MIN_NUMBER, STEP_COUNT);
-            int hideIndex = Utils.generateNumber(Utils.MIN_NUMBER, VALUE_COUNT);
+            int hideIndex = Utils.generateNumber(0, VALUE_COUNT - 1);
 
             String[] sequence = addSequence(start, step, VALUE_COUNT);
             String correctAnswer = sequence[hideIndex];
