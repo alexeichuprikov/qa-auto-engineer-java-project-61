@@ -3,9 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
     public static final int ROUNDS = 3;
-    //границы случайных чисел не были обозначены сделал от 1 до 100. требуется уточнение у аналитика
 
     public static void startGame(String optionDescription, String[][] questionsAndCorrectAnswers) {
         String userName = Cli.greet();

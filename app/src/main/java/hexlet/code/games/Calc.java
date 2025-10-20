@@ -1,19 +1,18 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
-    public static final int MAX_NUMBER = 100;
-
     public static void play() {
         String optionDescription = "What is the result of the expression?";
         String[][] questionsAndCorrectAnswers = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int firstValue = (int) (Math.random() * MAX_NUMBER) + 1;
-            int secondValue = (int) (Math.random() * MAX_NUMBER) + 1;
+            int firstValue = Utils.generateNumber();
+            int secondValue = Utils.generateNumber();
             char[] signs = {'+', '-', '*'};
-            char randomSign = signs[(int) (Math.random() * signs.length)];
+            char randomSign = signs[Utils.generateNumber(0, signs.length - 1)];
 
             String question = firstValue + " " + randomSign + " " + secondValue;
             String correctAnswer = calculateForCorrectAnswer(firstValue, secondValue, randomSign);

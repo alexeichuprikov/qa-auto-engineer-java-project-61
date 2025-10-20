@@ -1,19 +1,23 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
-    public static final int MAX_NUMBER = 100;
-
     public static void play() {
         String optionDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionsAndCorrectAnswers = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int random = (int) (Math.random() * MAX_NUMBER) + 1;
+            int random = Utils.generateNumber();
 
             String question = String.valueOf(random);
-            String correctAnswer = logicPrime(random);
+            String correctAnswer;
+            if (isPrime(random)) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
+            }
 
             questionsAndCorrectAnswers[i][0] = question;
             questionsAndCorrectAnswers[i][1] = correctAnswer;
@@ -22,15 +26,15 @@ public class Prime {
         Engine.startGame(optionDescription, questionsAndCorrectAnswers);
     }
 
-    public static String logicPrime(int random) {
+    public static boolean isPrime(int random) {
         if (random < 2) {
-            return "no";
+            return false;
         }
         for (int i = 2; i <= Math.sqrt(random); i++) {
             if (random % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }
