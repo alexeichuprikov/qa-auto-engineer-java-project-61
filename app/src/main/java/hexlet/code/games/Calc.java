@@ -4,13 +4,16 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
+    public static final int MIN_NUMBER = 1;
+    public static final int MAX_NUMBER = 100;
+
     public static void play() {
         String optionDescription = "What is the result of the expression?";
         String[][] questionsAndCorrectAnswers = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int firstValue = Utils.generateNumber();
-            int secondValue = Utils.generateNumber();
+            int firstValue = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int secondValue = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
             char[] signs = {'+', '-', '*'};
             char randomSign = signs[Utils.generateNumber(0, signs.length - 1)];
 

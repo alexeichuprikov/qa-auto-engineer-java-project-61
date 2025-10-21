@@ -4,6 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Progression {
+    public static final int MIN_NUMBER = 1;
+    public static final int MAX_NUMBER = 100;
     private static final int STEP_COUNT = 10;
     private static final int VALUE_COUNT = 10;
 
@@ -12,8 +14,8 @@ public class Progression {
         String[][] questionsAndCorrectAnswers = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int start = Utils.generateNumber();
-            int step = Utils.generateNumber(Utils.MIN_NUMBER, STEP_COUNT);
+            int start = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int step = Utils.generateNumber(MIN_NUMBER, STEP_COUNT);
             int hideIndex = Utils.generateNumber(0, VALUE_COUNT - 1);
 
             String[] sequence = addSequence(start, step, VALUE_COUNT);
